@@ -1,3 +1,4 @@
+import { } from 'framer-motion'
 import React from 'react';
 import FeedbackItem from './FeedbackItem';
 import PropTypes from 'prop-types';
@@ -19,14 +20,14 @@ function FeedbackList({ feedback, handleDelete }) {
   );
 }
 
-FeedbackList.propTypes = {
-  feedback: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired,
-      rating: PropTypes.number.isRequired,
-    })
-  ),
-};
+// FeedbackList.propTypes = {
+//   feedback: PropTypes.arrayOf(
+//     // PropTypes.shape({
+      
+//     //   text: PropTypes.string.isRequired,
+//     //   rating: PropTypes.number.isRequired,
+//     // })
+//   ),
+// };
 
 export default FeedbackList;
