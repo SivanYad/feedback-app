@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-function FeedbackItem() {
+function FeedbackItem({ item }) {
+
   return (
     <div className='card'>
-      <div className='num-display'>10</div>
-      <div className="text-dispaly">This is an example of feedback item</div>
+      <div className='num-display'>{item.rating}</div>
+      <div className='text-dispaly'>{item.text}</div>
+      
     </div>
   );
 }
