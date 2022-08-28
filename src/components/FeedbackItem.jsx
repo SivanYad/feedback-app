@@ -6,12 +6,16 @@ import { useState } from 'react';
 function FeedbackItem({ item }) {
 
   return (
-    <Card className='card' reverse={true} >
+    <Card className='card' >
       <div className='num-display'>{item.rating}</div>
       <div className='text-dispaly'>{item.text}</div>
       
     </Card>
   );
+}
+
+FeedbackItem.prototypes = {
+  item: PropTypes.object.isRequired
 }
 
 export default FeedbackItem;
