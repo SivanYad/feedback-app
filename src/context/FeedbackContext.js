@@ -25,7 +25,7 @@ export const FeedbackProvider = ({ children }) => {
 
   //set item to be updated
   const editFeedback = (item) => {
-    setFeedback({ item, edit: true });
+    setFeedbackEdit({ item, edit: true });
   };
 
   return (
