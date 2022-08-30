@@ -1,11 +1,17 @@
 import { createContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import FeedbackData from '../data/FeedbackData'
+import FeedbackData from '../data/FeedbackData';
 
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
   const [feedback, setFeedback] = useState(FeedbackData);
+
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  });
+
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
     setFeedback([newFeedback, ...feedback]);
@@ -16,8 +22,16 @@ export const FeedbackProvider = ({ children }) => {
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
+
+  //set item to be updated
+  const editFeedback = (item) => {
+    setFeedback({ item, edit: true });
+  };
+
   return (
-    <FeedbackContext.Provider value={{ feedback, deleteFeedback, addFeedback }}>
+    <FeedbackContext.Provider
+      value={{ feedback, deleteFeedback, addFeedback, editFeedback }}
+    >
       {children}
     </FeedbackContext.Provider>
   );
